@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compte rendu — Garde Pédiatrie</title>
+  <title>Compte rendu de Garde Pédiatrie</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
@@ -177,6 +177,9 @@
       <div class="grid-2">
         <div class="field"><label>Total admissions</label><input type="number" id="total_admission" min="0"
             placeholder="0" oninput="check()"></div>
+        <div class="field"><label>Total urgences vitales</label><input type="number" id="total_vitales" min="0"
+            placeholder="0" oninput="check()"></div>
+        
         <div class="field"><label>Total cas hospitalisés</label><input type="number" id="total_hospitalisation" min="0"
             placeholder="0" oninput="check()"></div>
         <div class="field"><label>Total cas traités en ambulatoire</label><input type="number" id="cas_ambulatoire"
@@ -328,6 +331,7 @@
         head: [["Indicateur", "Val."]],
         body: [
           ["Total admissions", t],
+          ["Total admissions", x],
           ["Total cas hospitalisés", h],
           ["Total cas traités en ambulatoire", a],
           ["Total référés", r],
