@@ -258,18 +258,20 @@
 
       let y = logoH + 10;
 
-      // Ligne + bandeau service
+      // Ligne + titre service sans background
       doc.setDrawColor(...GM);
       doc.setLineWidth(0.5);
       doc.line(14, y, pageW - 14, y);
-      y += 2;
-      doc.setFillColor(...GD);
-      doc.rect(0, y, pageW, 8, "F");
+      
+      y += 5;
+      
       doc.setFont("helvetica", "bold");
       doc.setFontSize(10);
-      doc.setTextColor(...W);
-      doc.text("Service Pédiatrie", pageW / 2, y + 5.5, { align: "center" });
-      y += 11;
+      doc.setTextColor(0, 0, 0); // Texte noir
+      
+      doc.text("Service Pédiatrie", pageW / 2, y, { align: "center" });
+      
+      y += 8;
 
       // Ligne + bandeau service
       doc.setDrawColor(...GM);
