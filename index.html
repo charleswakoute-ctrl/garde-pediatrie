@@ -228,7 +228,7 @@
     function txt(id) { return document.getElementById(id).value.trim() || "—"; }
 
     function check() {
-      let t = val("total_admission"), h = val("total_hospitalisation"), a = val("cas_ambulatoire"), r = val("cas_referes");
+      let t = val("total_admission"), x = val("total_vitales"), h = val("total_hospitalisation"), a = val("cas_ambulatoire"), r = val("cas_referes");
       let c = document.getElementById("coherence");
       if (t === 0 && h === 0 && a === 0 && r === 0) { c.innerHTML = "Vérification en cours..."; c.className = "coherence"; return; }
       if (t === h + a + r) { c.innerHTML = "✓ Données cohérentes — " + t + " = " + h + " + " + a + " + " + r; c.className = "coherence ok"; }
@@ -236,7 +236,7 @@
     }
 
     function genererPDF() {
-      let t = val("total_admission"), h = val("total_hospitalisation"), a = val("cas_ambulatoire"), r = val("cas_referes");
+      let t = val("total_admission"), x = val("total_vitales"), h = val("total_hospitalisation"), a = val("cas_ambulatoire"), r = val("cas_referes");
       if (t !== h + a + r) { alert("Corrigez l'incohérence avant d'exporter !"); return; }
 
       const dateVal = document.getElementById("date").value;
@@ -331,7 +331,7 @@
         head: [["Indicateur", "Val."]],
         body: [
           ["Total admissions", t],
-          ["Total admissions", x],
+          ["Total urgences vitales", x],
           ["Total cas hospitalisés", h],
           ["Total cas traités en ambulatoire", a],
           ["Total référés", r],
